@@ -1,8 +1,8 @@
-package main
+package general
 
 import "fmt"
 
-func main() {
+func NumsRepresentationExample() {
 	n := 12345
 
 	fmt.Printf("Decimal: %d\n", n)

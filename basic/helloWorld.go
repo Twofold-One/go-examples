@@ -1,11 +1,11 @@
-package main
+package basic
 
 import (
 	"fmt"
 	"time"
 )
 
-func main() {
+func HelloWorldExample() {
 	now := time.Now()
 	fmt.Println("Hello world", now)
 }

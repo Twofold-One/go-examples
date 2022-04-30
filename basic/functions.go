@@ -1,4 +1,4 @@
-package main
+package basic
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func FunctionsExample() {
 	const hotelName = "Gopher Paris Inn"
 	const totalRooms = 134
 	const initialRoom = 110

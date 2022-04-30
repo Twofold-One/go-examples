@@ -1,8 +1,8 @@
-package main
+package basic
 
 import "fmt"
 
-func main() {
+func VarAndConstExample() {
 	const hotelName string = "Gopher Hotel"
 	const longitude = 24.806078
 	const latitude = -78.243027
