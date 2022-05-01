@@ -1,9 +1,9 @@
 package main
 
 import (
-	// "github.com/Twofold-One/go-examples/basic"
+	"github.com/Twofold-One/go-examples/basic"
 	// "github.com/Twofold-One/go-examples/basic/packages"
-	"github.com/Twofold-One/go-examples/basic/methods"
+	// "github.com/Twofold-One/go-examples/basic/methods"
 )
 
 func main() {
@@ -14,11 +14,13 @@ func main() {
 	// basic.ControlStatementExample()
 	// basic.FunctionsExample()
 	// basic.TypesExample()
+	// basic.PointersExample()
+	basic.InterfacesExample()
 
 	// Sourse files from "packages" package
 	// packages.PackagesExample()
 
 	// Source files from "methods" package
-	methods.MethodsExample()
+	// methods.MethodsExample()
 
 }
