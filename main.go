@@ -1,14 +1,16 @@
 package main
 
 import (
-	"github.com/Twofold-One/go-examples/basic"
+	// "github.com/Twofold-One/go-examples/basic"
 	// "github.com/Twofold-One/go-examples/basic/packages"
 	// "github.com/Twofold-One/go-examples/basic/methods"
 	// "github.com/Twofold-One/go-examples/basic/calctest"
+	// "github.com/Twofold-One/go-examples/basic/mapsapp"
+	"github.com/Twofold-One/go-examples/basic/errors"
 )
 
 func main() {
-	// Source files from "basic" package
+	// Functions files from "basic" package
 	
 	// basic.HelloWorldExample()
 	// basic.VarAndConstExample()
@@ -18,15 +20,22 @@ func main() {
 	// basic.PointersExample()
 	// basic.InterfacesExample()
 	// basic.ArraysExample()
-	basic.SlicesExample()
+	// basic.SlicesExample()
+	// basic.MapsExample()
 	
 
-	// Sourse files from "packages" package
+	// Functions from "packages" package
 	// packages.PackagesExample()
 
-	// Source files from "methods" package
+	// Functions from "methods" package
 	// methods.MethodsExample()
 
-	// Source files from "calctest" package
+	// Functions from "calctest" package
 	// calctest.CalctestExample()
+
+	// Functions from "mapsApp" package
+	// mapsapp.MapsApp()
+
+	// Functions from "errors" package
+	errors.ErrorsExample()
 }

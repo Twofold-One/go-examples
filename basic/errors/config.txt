@@ -1,0 +1,2 @@
+CONF
+Hi from config.txt!
