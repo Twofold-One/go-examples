@@ -1,12 +1,12 @@
 package main
 
 import (
-	// "github.com/Twofold-One/go-examples/basic"
+	"github.com/Twofold-One/go-examples/basic"
 	// "github.com/Twofold-One/go-examples/basic/packages"
 	// "github.com/Twofold-One/go-examples/basic/methods"
 	// "github.com/Twofold-One/go-examples/basic/calctest"
 	// "github.com/Twofold-One/go-examples/basic/mapsapp"
-	"github.com/Twofold-One/go-examples/basic/errors"
+	// "github.com/Twofold-One/go-examples/basic/errors"
 )
 
 func main() {
@@ -22,7 +22,10 @@ func main() {
 	// basic.ArraysExample()
 	// basic.SlicesExample()
 	// basic.MapsExample()
-	
+
+	basic.AnonymousFunctionsExample()
+	basic.ClosuresExample()
+	basic.BasicWebServer()
 
 	// Functions from "packages" package
 	// packages.PackagesExample()
@@ -37,5 +40,5 @@ func main() {
 	// mapsapp.MapsApp()
 
 	// Functions from "errors" package
-	errors.ErrorsExample()
+	// errors.ErrorsExample()
 }
