@@ -22,10 +22,13 @@ func main() {
 	// basic.ArraysExample()
 	// basic.SlicesExample()
 	// basic.MapsExample()
+	
+	basic.JSONExample()
+	basic.XMLExample()
 
-	basic.AnonymousFunctionsExample()
-	basic.ClosuresExample()
-	basic.BasicWebServer()
+	// basic.AnonymousFunctionsExample()
+	// basic.ClosuresExample()
+	// basic.BasicWebServer()
 
 	// Functions from "packages" package
 	// packages.PackagesExample()
