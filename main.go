@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// Functions files from "basic" package
-	
+
 	// basic.HelloWorldExample()
 	// basic.VarAndConstExample()
 	// basic.ControlStatementExample()
@@ -22,9 +22,18 @@ func main() {
 	// basic.ArraysExample()
 	// basic.SlicesExample()
 	// basic.MapsExample()
-	
-	basic.JSONExample()
-	basic.XMLExample()
+
+	// basic.JSONExample()
+	// basic.XMLExample()
+
+	// basic.HTTPServerExample()
+	// basic.ABTestingServer()
+
+	// basic.EnumExample()
+	// basic.IotaExample()
+	// basic.BitwiseOperationsExample()
+
+	basic.DatesAndTimeExample()
 
 	// basic.AnonymousFunctionsExample()
 	// basic.ClosuresExample()
