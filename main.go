@@ -1,13 +1,13 @@
 package main
 
-import (
-	"github.com/Twofold-One/go-examples/basic"
-	// "github.com/Twofold-One/go-examples/basic/packages"
-	// "github.com/Twofold-One/go-examples/basic/methods"
-	// "github.com/Twofold-One/go-examples/basic/calctest"
-	// "github.com/Twofold-One/go-examples/basic/mapsapp"
-	// "github.com/Twofold-One/go-examples/basic/errors"
-)
+import "github.com/Twofold-One/go-examples/basic/datastorage"
+
+// "github.com/Twofold-One/go-examples/basic"
+// "github.com/Twofold-One/go-examples/basic/packages"
+// "github.com/Twofold-One/go-examples/basic/methods"
+// "github.com/Twofold-One/go-examples/basic/calctest"
+// "github.com/Twofold-One/go-examples/basic/mapsapp"
+// "github.com/Twofold-One/go-examples/basic/errors"
 
 func main() {
 	// Functions files from "basic" package
@@ -33,7 +33,7 @@ func main() {
 	// basic.IotaExample()
 	// basic.BitwiseOperationsExample()
 
-	basic.DatesAndTimeExample()
+	// basic.DatesAndTimeExample()
 
 	// basic.AnonymousFunctionsExample()
 	// basic.ClosuresExample()
@@ -53,4 +53,7 @@ func main() {
 
 	// Functions from "errors" package
 	// errors.ErrorsExample()
+
+	// Functions from "datastorage" package
+	datastorage.DatastorageExamples()
 }
