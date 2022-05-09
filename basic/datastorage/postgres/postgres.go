@@ -22,8 +22,11 @@ func PostgresExample() {
 		fmt.Println(err)
 		return
 	}
-	createTable(db)
-	createPerson("Maverick", "One", db)
+	// createTable(db)
+	// createPerson("Maverick", "One", db)
+	fmt.Println(getPerson(2, db))
+	fmt.Println(getPersons(db))
+	updatePersonLastName("Two", 2, db)
 }
 
 func createTable(db *sql.DB) {
@@ -61,4 +64,55 @@ func createPerson(firstname string, lastname string, db *sql.DB) (int, error) {
 	return insertedId, nil
 }
 
-// TODO
+// read one row
+type Person struct {
+	id int
+	firstname string
+	lastname string
+}
+
+func getPerson(id int, db *sql.DB) (*Person, error) {
+	person := Person{}
+	err := db.QueryRow("select id, firstname, lastname from person where id = $1", id).Scan(&person.id, &person.firstname, &person.lastname )
+	if err != nil {
+		return &person, err
+	}
+	return &person, nil
+}
+
+// read several rows
+func getPersons(db *sql.DB) (*[]Person, error) {
+	rows, err := db.Query("select id, firstname, lastname from person")
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+	persons := make([]Person, 0)
+	for rows.Next() {
+		person := Person{}
+		if err := rows.Scan(&person.id, &person.firstname, &person.lastname); err != nil {
+			return nil, err
+		}
+		persons = append(persons, person)
+	}
+	return &persons, nil
+}
+
+// update row
+func updatePersonLastName(lastname string, id int, db *sql.DB) {
+	res, err := db.Exec("update person set lastname = $1 where id = $2", lastname, id)
+	if err != nil {
+		fmt.Println(err)
+	}
+	affected, err := res.RowsAffected()
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	if affected != 1 {
+		fmt.Printf("Something went wrong %d rows were affected expected 1\n", affected)
+	} else {
+		fmt.Println("Successfully updated")
+	}
+}
