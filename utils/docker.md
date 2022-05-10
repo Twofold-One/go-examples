@@ -10,6 +10,10 @@ To get all available docker images:
 
 `$ docker images`
 
+To remove docker image (don't forget to remove stopped container before that):
+
+`$ docker image rm <image_name>`
+
 To pull docker img of postgres db:
 
 `$ docker pull postgres: 14.2-alpine`
@@ -59,3 +63,13 @@ To start mongodb container:
 To get access to mongodb shell:
 
 `$ docker exec -it mongodb bash` or `$ docker exec -it mongodb mongo`
+
+## ElasticSearch Specific
+
+To pull docker img of elasticsearch:
+
+`$ docker pull elasticsearch:7.17.3`
+
+To start elasticsearch container:
+
+`$ docker run --name elasticsearch -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" elasticsearch:7.17.3`

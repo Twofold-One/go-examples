@@ -1,8 +1,8 @@
 package main
 
-import "github.com/Twofold-One/go-examples/basic/datastorage"
+import "github.com/Twofold-One/go-examples/basic"
 
-// "github.com/Twofold-One/go-examples/basic"
+// "github.com/Twofold-One/go-examples/basic/datastorage"
 // "github.com/Twofold-One/go-examples/basic/packages"
 // "github.com/Twofold-One/go-examples/basic/methods"
 // "github.com/Twofold-One/go-examples/basic/calctest"
@@ -39,6 +39,8 @@ func main() {
 	// basic.ClosuresExample()
 	// basic.BasicWebServer()
 
+	basic.ConcurrencyExample()
+
 	// Functions from "packages" package
 	// packages.PackagesExample()
 
@@ -55,6 +57,6 @@ func main() {
 	// errors.ErrorsExample()
 
 	// Functions from "datastorage" package
-	datastorage.DatastorageExamples()
+	// datastorage.DatastorageExamples()
 	
 }
