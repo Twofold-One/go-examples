@@ -2,6 +2,7 @@ package basic
 
 import (
 	"fmt"
+	"log"
 	"time"
 )
 
@@ -17,9 +18,15 @@ import (
 
 func ConcurrencyExample() {
 	// simpleGoroutineExample()
-	channelsExample()
+	// channelsExample()
+	// unbufferedChannelExample()
+	// bufferedChannelExample()
+	// channelUsecase()
+	// deadlockBuffered()
+	// deadlockUnbuffered()
+	// selectWithoutDefault()
+	selectWithDefault()
 }
-
 
 func simpleGoroutineExample() {
 	fmt.Println("launch first goroutine")
@@ -78,8 +85,101 @@ func channelsExample() {
 	fmt.Println(received, ok)
 }
 
+func unbufferedChannelExample() {
+	ch := make(chan int)
+	// this will block unbuffered channel for 3 seconds by dummy func
+	go dummy(ch)
+	log.Println("waiting for reception...")
+	ch <- 45
+	log.Println("received")
+}
 
+func bufferedChannelExample() {
+	ch := make(chan int, 1)
+	// this will block buffered channel until the data is copied to the buffer
+	go dummy(ch)
+	log.Println("waiting for reception...")
+	// send operation is not blocking
+	ch <- 45
+	log.Println("received")
+}
+
+// Unbuffered channels are used to synchronize two goroutines
+func channelUsecase() {
+	syncCh := make(chan bool)
+	// launch a second goroutine
+	go func() {
+		longTask2()
+		syncCh <- true
+	}()
+	longTask1()
+	// blocks until the second goroutine has finished
+	<-syncCh
+}
+
+// Deadlock in bufferd channel
+func deadlockBuffered() {
+	ch := make(chan int, 1)
+	go dDummy(ch)
+	log.Println("waiting for reception")
+	ch <- 45
+	ch <- 58
+	ch <- 100
+}
+
+// Deadlock unbufferd channel
+func deadlockUnbuffered() {
+	ch := make(chan int)
+	ch <- 5
+}
+
+// //
+// Select Statement
+// //
+func selectWithoutDefault() {
+	ch1 := make(chan string, 1)
+	ch2 := make(chan string, 1)
+	ch1 <- "test"
+
+	select {
+	case rec, ok := <-ch1:
+		if ok {
+			log.Printf("received on ch1: %s", rec)
+		}
+	case rec, ok := <-ch2:
+		if ok {
+			log.Printf("received on ch2: %s", rec)
+		}
+	}
+	log.Println("end")
+}
+
+func selectWithDefault() {
+	ch1 := make(chan string, 1)
+	ch2 := make(chan string, 1)
+	select {
+	case rec, ok := <-ch1:
+		if ok {
+			log.Printf("received on ch1: %s", rec)
+		}
+	case rec, ok := <-ch2:
+		if ok {
+			log.Printf("receved on ch2: %s", rec)
+		}
+	default:
+		log.Println("default case")
+	}
+	log.Println("end")
+}
+
+// blocks the goroutine indefinitively and cause a deadlock
+func emptySelect() {
+	select {}
+}
+
+//
 // util functions
+//
 func printNumber() {
 	i := 0
 	for {
@@ -90,5 +190,22 @@ func printNumber() {
 			break
 		}
 	}
+}
 
+func dummy(c chan int) {
+	time.Sleep(3 * time.Second)
+	<-c
+}
+
+func longTask1() {
+	time.Sleep(3 * time.Second)
+}
+
+func longTask2() {
+	time.Sleep(1 * time.Second)
+}
+
+func dDummy(c chan int) {
+	smth := <-c
+	log.Println("has received something", smth)
 }

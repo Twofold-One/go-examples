@@ -39,7 +39,8 @@ func main() {
 	// basic.ClosuresExample()
 	// basic.BasicWebServer()
 
-	basic.ConcurrencyExample()
+	// basic.ConcurrencyExample()
+	basic.ConcurrencyUseCasesExample()
 
 	// Functions from "packages" package
 	// packages.PackagesExample()
@@ -58,5 +59,5 @@ func main() {
 
 	// Functions from "datastorage" package
 	// datastorage.DatastorageExamples()
-	
+
 }
