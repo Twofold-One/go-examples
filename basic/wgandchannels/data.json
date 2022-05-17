@@ -1,0 +1,36 @@
+{
+  "20-02-2019": [
+    {
+      "id": "b5c92427-7095-470e-985b-8df7ebe7ed2f",
+      "page": "/product-8",
+      "sessionHash": "48cd2ad413df8fd263d745275a6a9a95b9cad5374b67d6877c764fb40f29fd0c"
+    },
+    {
+      "id": "bdbd3948-b336-4cb1-badd-390dfe8c0459",
+      "page": "/product-1",
+      "sessionHash": "c02793f8fb7bb09efb7721aa5962c1b8de809e7ac720463f6ea66c0f4f7957b2"
+    },
+    {
+      "id": "b9a70a12-f6b1-4d7c-ae61-73fcd80b9992",
+      "page": "/product-8",
+      "sessionHash": "774f6b0f07c2ee4bce93ee36a9678b2f1022cda646ce36b1fc3b3205dee5646a"
+    }
+  ],
+  "19-02-2019": [
+    {
+      "id": "9c2887c4-19ed-4cce-8998-3fe8b3662fba",
+      "page": "/product-6",
+      "sessionHash": "5d91fe5022b6186dc1fb81d8f31122fccf0a036f5f381d7dfc298b6aaf889e35"
+    },
+    {
+      "id": "adbf1651-f6bd-453a-97af-c860d153e981",
+      "page": "/product-3",
+      "sessionHash": "48cd2ad413df8fd263d745275a6a9a95b9cad5374b67d6877c764fb40f29fd0c"
+    },
+    {
+      "id": "80a09881-675f-4569-bdb0-28c6983aaee4",
+      "page": "/basket",
+      "sessionHash": "5d91fe5022b6186dc1fb81d8f31122fccf0a036f5f381d7dfc298b6aaf889e35"
+    }
+  ]
+}

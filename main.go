@@ -1,13 +1,15 @@
 package main
 
-import "github.com/Twofold-One/go-examples/basic"
-
-// "github.com/Twofold-One/go-examples/basic/datastorage"
-// "github.com/Twofold-One/go-examples/basic/packages"
-// "github.com/Twofold-One/go-examples/basic/methods"
-// "github.com/Twofold-One/go-examples/basic/calctest"
-// "github.com/Twofold-One/go-examples/basic/mapsapp"
-// "github.com/Twofold-One/go-examples/basic/errors"
+import (
+	// "github.com/Twofold-One/go-examples/basic"
+	// "github.com/Twofold-One/go-examples/basic/datastorage"
+	// "github.com/Twofold-One/go-examples/basic/packages"
+	// "github.com/Twofold-One/go-examples/basic/methods"
+	// "github.com/Twofold-One/go-examples/basic/calctest"
+	// "github.com/Twofold-One/go-examples/basic/mapsapp"
+	// "github.com/Twofold-One/go-examples/basic/errors"
+	"github.com/Twofold-One/go-examples/basic/wgandchannels"
+)
 
 func main() {
 	// Functions files from "basic" package
@@ -40,7 +42,7 @@ func main() {
 	// basic.BasicWebServer()
 
 	// basic.ConcurrencyExample()
-	basic.ConcurrencyUseCasesExample()
+	// basic.ConcurrencyUseCasesExample()
 
 	// Functions from "packages" package
 	// packages.PackagesExample()
@@ -59,5 +61,8 @@ func main() {
 
 	// Functions from "datastorage" package
 	// datastorage.DatastorageExamples()
+
+	// Functions from "WGAndChannels" package
+	wgandchannels.WGAndChannelsExample()
 
 }

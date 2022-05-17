@@ -1,0 +1,7 @@
+[
+  { "date": "20-02-2019", "byPage": { "/product-1": 1, "/product-8": 2 } },
+  {
+    "date": "19-02-2019",
+    "byPage": { "/basket": 1, "/product-3": 1, "/product-6": 1 }
+  }
+]

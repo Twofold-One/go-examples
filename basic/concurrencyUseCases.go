@@ -7,13 +7,15 @@ import (
 	"net/http"
 	"os"
 	"os/signal"
+	"sync"
 	"syscall"
 	"time"
 )
 
 func ConcurrencyUseCasesExample() {
 	// gracefulShutdownHTTPServer()
-	timeout()
+	// timeout()
+	waitGroup()
 }
 
 func gracefulShutdownHTTPServer() {
@@ -65,8 +67,42 @@ func timeout() {
 
 }
 
-// //
-// Wait groups
-// //
+// // // // // //
+// Wait groups //
+// // // // // //
 
-// ToDo
+func waitGroup() {
+	fmt.Println("Program start")
+	// initialize waitGroup
+	var waitGroup sync.WaitGroup
+	// increment waitGroup
+	waitGroup.Add(10)
+	for i := 0; i < 10; i++ {
+		// without waitGroup
+		// go concurrentTasksWithout(i)
+		go concurrentTasksWith(i, &waitGroup)
+	}
+	// block current goroutine until all goroutines have finished
+	waitGroup.Wait()
+	finishTask()
+	fmt.Println("Program end")
+
+}
+
+func finishTask() {
+	fmt.Println("Executing finish task")
+}
+
+func concurrentTasksWithout(taskNumber int) {
+	fmt.Printf("BEGIN Execute task number %d\n", taskNumber)
+	time.Sleep(100 * time.Millisecond)
+	fmt.Printf("END Execute task number %d\n", taskNumber)
+}
+
+func concurrentTasksWith(taskNumber int, waitGroup *sync.WaitGroup) {
+	fmt.Printf("BEGIN Execute task number %d\n", taskNumber)
+	time.Sleep(100 * time.Millisecond)
+	fmt.Printf("END Execute task number %d\n", taskNumber)
+	// decrement waitGroup
+	waitGroup.Done()
+}
