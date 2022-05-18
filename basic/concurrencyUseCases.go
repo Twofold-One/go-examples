@@ -3,6 +3,7 @@ package basic
 import (
 	"context"
 	"fmt"
+	"io/ioutil"
 	"log"
 	"net/http"
 	"os"
@@ -15,7 +16,15 @@ import (
 func ConcurrencyUseCasesExample() {
 	// gracefulShutdownHTTPServer()
 	// timeout()
-	waitGroup()
+	// waitGroup()
+
+	go func() {
+		mutexHTTP()
+	}()
+
+	time.Sleep(2 * time.Second)
+	log.Println("starting server calls...")
+	mutexServerCall()
 }
 
 func gracefulShutdownHTTPServer() {
@@ -105,4 +114,64 @@ func concurrentTasksWith(taskNumber int, waitGroup *sync.WaitGroup) {
 	fmt.Printf("END Execute task number %d\n", taskNumber)
 	// decrement waitGroup
 	waitGroup.Done()
+}
+
+// // // // //
+// Mutexes //
+// // // // //
+
+var mu sync.Mutex
+var requestCount int
+
+func mutexHTTP() {
+	http.HandleFunc("/status", status)
+	log.Println("starting server at :8090")
+	err := http.ListenAndServe(":8090", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+// status increments requestCount each time a request is sent to the route
+func status(w http.ResponseWriter, req *http.Request) {
+	mu.Lock()
+	requestCount++
+	mu.Unlock()
+	fmt.Fprintf(w, "OK - count: %d\n", requestCount)
+}
+
+// mutexServerCall will start 10 goroutines that will each
+// send 100 requests to the server concurrently.
+func mutexServerCall() {
+	var w8 sync.WaitGroup
+	w8.Add(10)
+	for k := 0; k < 10; k++ {
+		go caller(&w8)
+	}
+	w8.Wait()
+}
+
+func caller(w8 *sync.WaitGroup) {
+	for k := 0; k < 100; k++ {
+		res, err := http.Get("http://localhost:8090/status")
+		if err != nil {
+			log.Fatal(err)
+		}
+		defer res.Body.Close()
+		s, err := ioutil.ReadAll(res.Body)
+		if err != nil {
+			log.Fatal(err)
+		}
+		log.Println(string(s))
+	}
+	w8.Done()
+}
+
+// Note
+// There is a pretty common idion called the Mutex hat
+// when mutexes are usually used in struct types
+
+type st struct {
+	mu sync.Mutex
+	// ...
 }

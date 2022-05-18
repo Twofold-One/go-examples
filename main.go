@@ -1,14 +1,14 @@
 package main
 
 import (
-	// "github.com/Twofold-One/go-examples/basic"
+	"github.com/Twofold-One/go-examples/basic"
 	// "github.com/Twofold-One/go-examples/basic/datastorage"
 	// "github.com/Twofold-One/go-examples/basic/packages"
 	// "github.com/Twofold-One/go-examples/basic/methods"
 	// "github.com/Twofold-One/go-examples/basic/calctest"
 	// "github.com/Twofold-One/go-examples/basic/mapsapp"
 	// "github.com/Twofold-One/go-examples/basic/errors"
-	"github.com/Twofold-One/go-examples/basic/wgandchannels"
+	// "github.com/Twofold-One/go-examples/basic/wgandchannels"
 )
 
 func main() {
@@ -42,7 +42,7 @@ func main() {
 	// basic.BasicWebServer()
 
 	// basic.ConcurrencyExample()
-	// basic.ConcurrencyUseCasesExample()
+	basic.ConcurrencyUseCasesExample()
 
 	// Functions from "packages" package
 	// packages.PackagesExample()
@@ -63,6 +63,6 @@ func main() {
 	// datastorage.DatastorageExamples()
 
 	// Functions from "WGAndChannels" package
-	wgandchannels.WGAndChannelsExample()
+	// wgandchannels.WGAndChannelsExample()
 
 }
