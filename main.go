@@ -42,7 +42,9 @@ func main() {
 	// basic.BasicWebServer()
 
 	// basic.ConcurrencyExample()
-	basic.ConcurrencyUseCasesExample()
+	// basic.ConcurrencyUseCasesExample()
+
+	basic.LoggingExmaple()
 
 	// Functions from "packages" package
 	// packages.PackagesExample()
