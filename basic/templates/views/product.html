@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Name}}</title>
+  </head>
+  <body>
+    {{template "header" .}}
+    <h1>{{.Name}}</h1>
+    <p>{{.Description}}</p>
+    <p>Price: <strong>{{.Price}}</strong>$</p>
+    <p>Shipping date: {{.ShippingDate.Format "2006-01-02"}}</p>
+    <h2>Delivery options</h2>
+    <ul>
+      {{range $index, $element := .ShippingOptions}}
+      <li>{{$element}}</li>
+      {{end}}
+    </ul>
+    {{$firstDelOpt := index .ShippingOptions 0}}
+    <p>First delivery option is {{$firstDelOpt}}</p>
+    {{$myVar := .Price}} {{template "footer" .}}
+    <p>{{.Foo}} {{.Bar "lol"}}</p>
+    {{if and .Sale .SaleImagePath}}
+    <p>My super image</p>
+    {{end}}
+    <p>{{call .MyFunc "first" "second"}}</p>
+    <p>{{capitalizeFirstLetter "test"}}</p>
+    {{if .Sale}}
+    <h3>Exclusive Sale Today</h3>
+    {{else}}
+    <h3>Not in sale</h3>
+    {{end}} {{$note := index .Notes 0 1}}
+    <p>First note, second criterion: {{$note}}</p>
+  </body>
+</html>
