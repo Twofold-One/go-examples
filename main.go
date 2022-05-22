@@ -9,7 +9,8 @@ import (
 	// "github.com/Twofold-One/go-examples/basic/mapsapp"
 	// "github.com/Twofold-One/go-examples/basic/errors"
 	// "github.com/Twofold-One/go-examples/basic/wgandchannels"
-	"github.com/Twofold-One/go-examples/basic/templates"
+	// "github.com/Twofold-One/go-examples/basic/templates"
+	"github.com/Twofold-One/go-examples/basic/appconfiguration"
 )
 
 func main() {
@@ -69,6 +70,8 @@ func main() {
 	// wgandchannels.WGAndChannelsExample()
 
 	// Functions from "templates" package
-	templates.TemplatesExample()
+	// templates.TemplatesExample()
 
+	// Functions from "appconfiguration" package
+	appconfiguration.AppConfigurationExample()
 }
