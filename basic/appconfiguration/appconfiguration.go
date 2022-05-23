@@ -1,6 +1,8 @@
 package appconfiguration
 
 func AppConfigurationExample() {
-	CommandLineOpts()
-	EnvVars()
+	// CommandLineOpts()
+	// EnvVars()
+	// FileBasedConfig()
+	ViperConf()
 }

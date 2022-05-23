@@ -30,7 +30,6 @@ func MongodbExample() {
 	defer cancel()
 	err = client.Ping(ctx, readpref.Primary())
 
-	
 	collection := client.Database("db").Collection("person")
 
 	// insert document to collection
@@ -60,7 +59,7 @@ func insertDocument(collection *mongo.Collection) {
 
 // read a document
 type Person struct {
-	Name string
+	Name     string
 	Lastname string
 }
 
@@ -75,7 +74,7 @@ func readDocument(collection *mongo.Collection) {
 }
 
 // query document with logical selector
-func logicalDocumentQuery(collection *mongo.Collection) { 
+func logicalDocumentQuery(collection *mongo.Collection) {
 	q1 := bson.M{"name": bson.M{"$eq": "Jhon"}}
 	q2 := bson.M{"lastname": bson.M{"$eq": "Doe"}}
 	clauses := bson.A{q1, q2}
@@ -102,7 +101,7 @@ func logicalDocumentQuery(collection *mongo.Collection) {
 func updateDocument(collection *mongo.Collection) {
 	filter := bson.M{"name": "Jhon"}
 	update := bson.M{"$set": bson.M{"name": "John"}}
-	
+
 	res := collection.FindOneAndUpdate(context.Background(), filter, update)
 	resDecoded := Person{}
 	err := res.Decode(&resDecoded)
