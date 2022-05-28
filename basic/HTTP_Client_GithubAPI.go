@@ -140,11 +140,6 @@ func updateGistReq(c http.Client) {
 	fmt.Printf("Response status: %s\n", resp.Status)
 }
 
-func logError(err error) {
-	fmt.Printf("ERROR: %s\n", err)
-	return
-}
-
 func deleteGistReq(c http.Client) {
 	req, err := http.NewRequest("DELETE", "https://api.github.com/gists/a16b15aa29e459caecd59c907fda727c", nil)
 	if err != nil {
@@ -165,9 +160,7 @@ func deleteGistReq(c http.Client) {
 	fmt.Printf("Response status: %s\n", resp.Status)
 }
 
-// func errorChecker(err error) {
-// 	if err != nil {
-// 		fmt.Printf("ERROR: %s", err)
-// 	}
-// 	return
-// }
+func logError(err error) {
+	fmt.Printf("ERROR: %s\n", err)
+	return
+}
