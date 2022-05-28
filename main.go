@@ -1,7 +1,7 @@
 package main
 
 import (
-	// "github.com/Twofold-One/go-examples/basic"
+	"github.com/Twofold-One/go-examples/basic"
 	// "github.com/Twofold-One/go-examples/basic/datastorage"
 	// "github.com/Twofold-One/go-examples/basic/packages"
 	// "github.com/Twofold-One/go-examples/basic/methods"
@@ -10,7 +10,7 @@ import (
 	// "github.com/Twofold-One/go-examples/basic/errors"
 	// "github.com/Twofold-One/go-examples/basic/wgandchannels"
 	// "github.com/Twofold-One/go-examples/basic/templates"
-	"github.com/Twofold-One/go-examples/basic/appconfiguration"
+	// "github.com/Twofold-One/go-examples/basic/appconfiguration"
 )
 
 func main() {
@@ -48,6 +48,11 @@ func main() {
 
 	// basic.LoggingExmaple()
 
+	// basic.BenchmarksExmaple()
+
+	// basic.HTTPClientExmaple()
+	basic.HTTPClientGithubAPI()
+
 	// Functions from "packages" package
 	// packages.PackagesExample()
 
@@ -73,5 +78,5 @@ func main() {
 	// templates.TemplatesExample()
 
 	// Functions from "appconfiguration" package
-	appconfiguration.AppConfigurationExample()
+	// appconfiguration.AppConfigurationExample()
 }
