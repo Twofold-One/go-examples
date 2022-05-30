@@ -51,7 +51,9 @@ func main() {
 	// basic.BenchmarksExmaple()
 
 	// basic.HTTPClientExmaple()
-	basic.HTTPClientGithubAPI()
+	// basic.HTTPClientGithubAPI()
+
+	basic.ProfilingExample()
 
 	// Functions from "packages" package
 	// packages.PackagesExample()
