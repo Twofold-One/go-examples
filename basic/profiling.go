@@ -7,8 +7,6 @@ import (
 	"runtime/pprof"
 )
 
-// TODO
-
 // Difference between profiling and benchmark
 // A benchmark collects runtime information about a specific function. Profiling is the collection of statistics for the whole program.
 func ProfilingExample() {
@@ -37,3 +35,6 @@ func doSum() int {
 	}
 	return sum
 }
+
+// example command to decode protol buffer file:
+// $ sudo protoc --decode perftools.profiles.Profile /home/twofold_one/GitProjects/go/pprof/proto/profile.proto --proto_path /home/twofold_one/GitProjects/go/pprof/proto <  profile.pb
