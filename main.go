@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Twofold-One/go-examples/basic"
+	// "github.com/Twofold-One/go-examples/basic"
 	// "github.com/Twofold-One/go-examples/basic/datastorage"
 	// "github.com/Twofold-One/go-examples/basic/packages"
 	// "github.com/Twofold-One/go-examples/basic/methods"
@@ -11,6 +11,7 @@ import (
 	// "github.com/Twofold-One/go-examples/basic/wgandchannels"
 	// "github.com/Twofold-One/go-examples/basic/templates"
 	// "github.com/Twofold-One/go-examples/basic/appconfiguration"
+	"github.com/Twofold-One/go-examples/basic/contextEx"
 )
 
 func main() {
@@ -53,7 +54,7 @@ func main() {
 	// basic.HTTPClientExmaple()
 	// basic.HTTPClientGithubAPI()
 
-	basic.ProfilingExample()
+	// basic.ProfilingExample()
 
 	// Functions from "packages" package
 	// packages.PackagesExample()
@@ -81,4 +82,7 @@ func main() {
 
 	// Functions from "appconfiguration" package
 	// appconfiguration.AppConfigurationExample()
+
+	// Functions from "contextEx" package
+	contextEx.ContextEx()
 }
